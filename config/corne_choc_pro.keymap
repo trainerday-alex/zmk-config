@@ -1,0 +1,64 @@
+/*
+ * Custom layout converted from Vial for Corne Choc Pro
+ * Based on keyboard.vil with home row mods
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+/ {
+    chosen {
+        zmk,physical-layout = &default_layout;
+    };
+};
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        // Layer 0: Base Layer with Home Row Mods
+        default_layer {
+            display-name = "BASE";
+            bindings = <
+   &kp PG_UP  &kp Q         &kp W         &kp E         &kp R           &kp T       &none     &none     &kp Y     &kp U           &kp I         &kp O         &kp P          &kp SQT
+   &kp PG_DN  &mt LSHFT A   &mt LALT S    &mt LCTRL D   &mt LGUI F      &kp G       &none     &none     &kp H     &mt RGUI J      &mt RCTRL K   &mt RALT L    &mt RSHFT SEMI &kp SQT
+   &kp F16    &kp Z         &kp X         &kp C         &kp V           &kp B                           &kp N     &kp M           &kp COMMA     &kp DOT       &kp SLASH      &kp LG(ESC)
+                                          &lt 3 F16     &lt 2 ESC       &lt 1 TAB                       &lt 1 BSPC &kp SPACE      &lt 2 RET
+            >;
+        };
+
+        // Layer 1: Numbers and Symbols
+        numbers_layer {
+            display-name = "NUM/SYM";
+            bindings = <
+   &none      &kp UNDER     &kp TILDE     &kp LBKT      &kp RBKT        &kp EXCL    &none     &none     &kp HOME  &kp KP_MULTIPLY &kp N9        &kp N8        &kp N7         &kp KP_PLUS
+   &kp CARET  &kp HASH      &kp DOLLAR    &kp LPAR      &kp RPAR        &kp AT      &none     &none     &kp RA(HOME) &kp KP_DIVIDE &kp N6       &kp N5        &kp N4         &kp KP_MINUS
+   &none      &kp PRCNT     &kp PIPE      &kp LBRC      &kp RBRC        &kp AMPS                        &none     &kp KP_EQUAL    &kp N3        &kp N2        &kp N1         &kp KP_N0
+                                          &trans        &trans          &trans                          &trans    &kp LG(Z)       &trans
+            >;
+        };
+
+        // Layer 2: Navigation
+        nav_layer {
+            display-name = "NAV";
+            bindings = <
+   &none      &kp LA(N1)    &kp LA(N2)    &kp LA(N3)    &kp LA(N4)      &kp LA(N5)  &none     &none     &none     &none           &kp LA(N9)    &none         &none          &none
+   &none      &none         &none         &none         &none           &none       &none     &none     &kp LEFT  &kp DOWN        &kp UP        &kp RIGHT     &none          &none
+   &none      &none         &none         &none         &none           &none                           &none     &none           &none         &none         &none          &none
+                                          &trans        &trans          &trans                          &trans    &none           &trans
+            >;
+        };
+
+        // Layer 3: Function Keys + Bootloader
+        function_layer {
+            display-name = "FN";
+            bindings = <
+   &bootloader &kp F1       &kp F2        &kp F3        &kp F4          &kp F5      &none     &none     &kp F12   &kp F11         &kp F10       &kp F9        &kp F8         &bootloader
+   &none      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4 &none    &none     &none     &none           &none         &none         &none          &none
+   &none      &bt BT_CLR    &sys_reset    &none         &none           &none                           &none     &none           &none         &none         &none          &none
+                                          &trans        &trans          &trans                          &trans    &trans          &trans
+            >;
+        };
+    };
+};
