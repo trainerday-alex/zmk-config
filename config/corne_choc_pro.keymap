@@ -17,13 +17,13 @@
     keymap {
         compatible = "zmk,keymap";
 
-        // Layer 0: Base Layer with Home Row Mods
+        // Layer 0: Base Layer - TEST (bottom right is Q instead of Cmd+ESC)
         default_layer {
             display-name = "BASE";
             bindings = <
    &kp PG_UP  &kp Q         &kp W         &kp E         &kp R           &kp T       &none     &none     &kp Y     &kp U           &kp I         &kp O         &kp P          &kp SQT
    &kp PG_DN  &mt LSHFT A   &mt LALT S    &mt LCTRL D   &mt LGUI F      &kp G       &none     &none     &kp H     &mt RGUI J      &mt RCTRL K   &mt RALT L    &mt RSHFT SEMI &kp SQT
-   &kp F16    &kp Z         &kp X         &kp C         &kp V           &kp B                           &kp N     &kp M           &kp COMMA     &kp DOT       &kp SLASH      &kp LG(ESC)
+   &kp F16    &kp Z         &kp X         &kp C         &kp V           &kp B                           &kp N     &kp M           &kp COMMA     &kp DOT       &kp SLASH      &kp Q
                                           &lt 3 F16     &lt 2 ESC       &lt 1 TAB                       &lt 1 BSPC &kp SPACE      &lt 2 RET
             >;
         };
